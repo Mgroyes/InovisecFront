@@ -1,7 +1,30 @@
 .dashboard{
-    display:grid;
-    grid-template-columns:340px 1fr;
+
+    display:flex;
+
     height:100vh;
-    overflow:hidden;
-    background:#0B1F2D;
+
+    background:#15243a;
+}
+
+.content{
+
+    flex:1;
+
+    padding:24px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+}
+
+.body{
+
+    flex:1;
+
+    display:flex;
+
+    gap:20px;
 }

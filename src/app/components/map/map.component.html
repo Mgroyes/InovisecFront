@@ -1,1 +1,31 @@
-<p>map works!</p>
+<div class="map-container">
+
+    <img
+        src="assets/imgs/mapp.JPG"
+        alt="Mapa">
+
+    <div
+        *ngFor="let marker of markers"
+        class="marker"
+        [style.top.%]="marker.top"
+        [style.left.%]="marker.left"
+        (mouseenter)="show(marker)"
+        (mouseleave)="hide()">
+
+    </div>
+
+    <div
+        class="tooltip"
+        *ngIf="selectedCase"
+        [style.top.%]="selectedCase.top"
+        [style.left.%]="selectedCase.left">
+
+        <h4>{{selectedCase.title}}</h4>
+
+        <p>{{selectedCase.description}}</p>
+
+        <span>{{selectedCase.date}}</span>
+
+    </div>
+
+</div>
