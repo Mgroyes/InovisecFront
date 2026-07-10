@@ -131,3 +131,101 @@
    
 
 }
+
+.case-card{
+
+    margin-top:20px;
+
+    background:#FFF7D6;
+
+    border-left:6px solid #F5A623;
+
+    border-radius:14px;
+
+    padding:18px;
+
+    position:relative;
+
+    animation:fade .25s ease;
+
+}
+
+.close-btn{
+
+    position:absolute;
+
+    right:15px;
+
+    top:15px;
+
+    border:none;
+
+    background:none;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    color:#475569;
+
+}
+
+.case-card h2{
+
+    margin-bottom:12px;
+
+    color:#17384A;
+
+}
+
+.case-card p{
+
+    margin:8px 0;
+
+    font-size:14px;
+
+    color:#334155;
+
+}
+
+.timeline{
+
+    margin-top:12px;
+
+    padding-left:20px;
+
+}
+
+.timeline li{
+
+    margin-bottom:10px;
+
+    color:#17384A;
+
+}
+
+.notes{
+
+    line-height:1.6;
+
+}
+
+@keyframes fade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(12px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}

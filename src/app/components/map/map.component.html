@@ -10,7 +10,8 @@
         [style.top.%]="marker.top"
         [style.left.%]="marker.left"
         (mouseenter)="show(marker)"
-        (mouseleave)="hide()">
+        (mouseleave)="hide()"
+        (click)="selectCase(marker)">
 
     </div>
 
@@ -20,11 +21,11 @@
         [style.top.%]="selectedCase.top"
         [style.left.%]="selectedCase.left">
 
-        <h4>{{selectedCase.title}}</h4>
+        <h4>{{ selectedCase.title }}</h4>
 
-        <p>{{selectedCase.description}}</p>
+        <p>{{ selectedCase.description }}</p>
 
-        <span>{{selectedCase.date}}</span>
+        <span>{{ selectedCase.date }}</span>
 
     </div>
 

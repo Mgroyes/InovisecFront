@@ -1,73 +1,103 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-interface CaseMarker{
+export interface CaseMarker {
 
-  id:number;
+  id: number;
 
-  title:string;
+  title: string;
 
-  description:string;
+  description: string;
 
-  date:string;
+  date: string;
 
-  top:number;
+  top: number;
 
-  left:number;
+  left: number;
+
+  status: string;
+
+  neighborhood: string;
+
+  guard: string;
+
+  priority: string;
 
 }
 
 @Component({
-  selector:'app-map',
-  standalone:true,
-  imports:[CommonModule],
-  templateUrl:'./map.component.html',
-  styleUrl:'./map.component.scss'
+  selector: 'app-map',
+  standalone: true,
+  imports: [CommonModule],
+  templateUrl: './map.component.html',
+  styleUrl: './map.component.scss'
 })
-export class MapComponent{
+export class MapComponent {
 
-  selectedCase?:CaseMarker;
+  @Output()
+  caseSelected = new EventEmitter<CaseMarker>();
+
+  selectedCase?: CaseMarker;
 
   markers: CaseMarker[] = [
 
-  {
-    id:1,
-    title:'Caso #001',
-    description:'Accidente vehicular',
-    date:'09 Jul 2026',
-    top:32,
-    left:44
-  },
+    {
+      id: 1,
+      title: 'Caso #001',
+      description: 'Accidente vehicular con daños materiales.',
+      date: '09 Jul 2026',
+      top: 32,
+      left: 44,
+      status: 'En proceso',
+      neighborhood: 'Laureles',
+      guard: 'Miguel Rodríguez',
+      priority: 'Alta'
+    },
 
-  {
-    id:2,
-    title:'Caso #002',
-    description:'Incendio estructural',
-    date:'10 Jul 2026',
-    top:56,
-    left:61
-  },
+    {
+      id: 2,
+      title: 'Caso #002',
+      description: 'Incendio estructural controlado.',
+      date: '10 Jul 2026',
+      top: 56,
+      left: 61,
+      status: 'Atendido',
+      neighborhood: 'Belén',
+      guard: 'Carlos Ramírez',
+      priority: 'Media'
+    },
 
-  {
-    id:3,
-    title:'Caso #003',
-    description:'Alerta ciudadana',
-    date:'10 Jul 2026',
-    top:40,
-    left:73
+    {
+      id: 3,
+      title: 'Caso #003',
+      description: 'Alerta ciudadana por comportamiento sospechoso.',
+      date: '10 Jul 2026',
+      top: 40,
+      left: 73,
+      status: 'Abierto',
+      neighborhood: 'El Poblado',
+      guard: 'Laura Gómez',
+      priority: 'Alta'
+    }
+
+  ];
+
+  show(marker: CaseMarker) {
+
+    this.selectedCase = marker;
+
   }
 
-];
+  hide() {
 
-show(marker:CaseMarker){
+    this.selectedCase = undefined;
 
-   this.selectedCase=marker;
+  }
 
-}
+  selectCase(marker: CaseMarker) {
 
-hide(){
+    this.caseSelected.emit(marker);
 
-   this.selectedCase=undefined;
+  }
 
-}
 }

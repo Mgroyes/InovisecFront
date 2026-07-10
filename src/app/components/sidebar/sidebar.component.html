@@ -1,11 +1,8 @@
 <div class="sidebar">
 
-     
-
     <div class="search-box">
 
-        <input
-            placeholder="Buscar caso">
+        <input placeholder="Buscar caso">
 
         <span>🔍</span>
 
@@ -14,40 +11,98 @@
     <div class="resume">
 
         <h3>
-            A continuación encuentra el resumen de casos registrados.<br>
-            <strong>Seleccione un incidente para visualizar la información.</strong>
+            A continuación encuentra el resumen de casos registrados.
         </h3>
 
         <div class="numbers">
 
             <div>
-
-                
-
-                <p>Abiertos(104)</p>
-
+                <p>Abiertos (104)</p>
             </div>
 
             <div>
-
-               
-
                 <p>En proceso (70)</p>
-
             </div>
 
             <div>
-
-                
-
-                <p>Cerrados(30)</p>
-
+                <p>Cerrados (30)</p>
             </div>
 
         </div>
 
     </div>
 
-  
+    <!-- Estado vacío -->
+
+    <div
+        class="message"
+        *ngIf="!selectedCase">
+
+        <h3>
+
+            Seleccione un incidente para visualizar la información.
+
+        </h3>
+
+    </div>
+
+    <!-- Card del caso -->
+
+    <div
+        class="case-card"
+        *ngIf="selectedCase">
+
+        <button
+            class="close-btn"
+            (click)="close.emit()">
+
+            ✕
+
+        </button>
+
+        <h2>{{selectedCase.title}}</h2>
+
+        <p><strong>ID:</strong> {{selectedCase.id}}</p>
+
+        <p><strong>Estado:</strong> {{selectedCase.status}}</p>
+
+        <p><strong>Prioridad:</strong> {{selectedCase.priority}}</p>
+
+        <p><strong>Barrio:</strong> {{selectedCase.neighborhood}}</p>
+
+        <p><strong>Responsable:</strong> {{selectedCase.guard}}</p>
+
+        <p><strong>Fecha:</strong> {{selectedCase.date}}</p>
+
+        <hr>
+
+        <h4>Línea de tiempo</h4>
+
+        <ul class="timeline">
+
+            <li>09:00 - Caso creado</li>
+
+            <li>09:15 - Guardia asignado</li>
+
+            <li>09:28 - En desplazamiento</li>
+
+            <li>09:41 - Seguimiento activo</li>
+
+        </ul>
+
+        <hr>
+
+        <h4>Observaciones</h4>
+
+        <p class="notes">
+
+            El agente reporta que la situación se encuentra
+            bajo control. Se continúa con la verificación del
+            lugar y la recolección de información para el
+            cierre del incidente.
+
+        </p>
+
+    </div>
 
 </div>

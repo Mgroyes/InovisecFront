@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
+
 import { HeaderComponent } from '../../components/header/header.component';
 import { SidebarComponent } from '../../components/sidebar/sidebar.component';
-import { MapComponent } from '../../components/map/map.component';
-
+import { MapComponent, CaseMarker } from '../../components/map/map.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,10 +10,25 @@ import { MapComponent } from '../../components/map/map.component';
   imports: [
     HeaderComponent,
     SidebarComponent,
-    MapComponent,
-
+    MapComponent
   ],
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
-export class DashboardComponent {}
+export class DashboardComponent {
+
+  selectedCase: CaseMarker | null = null;
+
+  onCaseSelected(caseData: CaseMarker): void {
+
+    this.selectedCase = caseData;
+
+  }
+
+  closeCase(): void {
+
+    this.selectedCase = null;
+
+  }
+
+}

@@ -1,6 +1,12 @@
 <div class="dashboard">
 
-    <app-sidebar></app-sidebar>
+    <app-sidebar
+
+        [selectedCase]="selectedCase"
+
+        (close)="closeCase()">
+
+    </app-sidebar>
 
     <main class="content">
 
@@ -8,9 +14,11 @@
 
         <div class="body">
 
-            <app-map></app-map>
-            
-            
+            <app-map
+
+                (caseSelected)="onCaseSelected($event)">
+
+            </app-map>
 
         </div>
 
