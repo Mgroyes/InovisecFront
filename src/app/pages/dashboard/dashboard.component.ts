@@ -1,13 +1,17 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { HeaderComponent } from '../../components/header/header.component';
+import { SidebarComponent } from '../../components/sidebar/sidebar.component';
+import { MapComponent } from '../../components/map/map.component';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CommonModule],
+  imports: [
+    HeaderComponent,
+    SidebarComponent,
+    MapComponent
+  ],
   templateUrl: './dashboard.component.html',
-  styleUrl: './dashboard.component.scss'
+  styleUrls: ['./dashboard.component.scss']
 })
-export class DashboardComponent {
-
-}
+export class DashboardComponent {}
