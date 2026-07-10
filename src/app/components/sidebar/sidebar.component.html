@@ -2,30 +2,61 @@
 
     <div class="search-box">
 
-        <input placeholder="Buscar caso">
+    <input
+        type="text"
+        placeholder="Buscar por ID, barrio o guarda">
 
-        <span>🔍</span>
+    <span class="search-icon">
 
-    </div>
+        <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none">
+
+            <path
+                d="M21 21L15.8 15.8M17 10.5C17 14.0899 14.0899 17 10.5 17C6.91015 17 4 14.0899 4 10.5C4 6.91015 6.91015 4 10.5 4C14.0899 4 17 6.91015 17 10.5Z"
+                stroke="#64748B"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"/>
+
+        </svg>
+
+    </span>
+
+</div>
 
     <div class="resume">
 
         <h3>
-            A continuación encuentra el resumen de casos registrados.
+            Resumen de casos registrados
         </h3>
 
         <div class="numbers">
 
-            <div>
-                <p>Abiertos (104)</p>
+            <div class="item">
+
+                <span class="value">104</span>
+
+                <span class="label">Abiertos</span>
+
             </div>
 
-            <div>
-                <p>En proceso (70)</p>
+            <div class="item">
+
+                <span class="value">70</span>
+
+                <span class="label">En proceso</span>
+
             </div>
 
-            <div>
-                <p>Cerrados (30)</p>
+            <div class="item">
+
+                <span class="value">30</span>
+
+                <span class="label">Cerrados</span>
+
             </div>
 
         </div>
@@ -38,15 +69,32 @@
         class="message"
         *ngIf="!selectedCase">
 
-        <h3>
+        <div class="empty-card">
 
-            Seleccione un incidente para visualizar la información.
+            <div class="empty-icon">
 
-        </h3>
+                ⚠
+
+            </div>
+
+            <h3>
+
+                Ningún incidente seleccionado
+
+            </h3>
+
+            <p>
+
+                Seleccione un punto del mapa para visualizar
+                la información del caso.
+
+            </p>
+
+        </div>
 
     </div>
 
-    <!-- Card del caso -->
+    <!-- Detalle -->
 
     <div
         class="case-card"
@@ -60,48 +108,138 @@
 
         </button>
 
-        <h2>{{selectedCase.title}}</h2>
+        <div class="case-header">
 
-        <p><strong>ID:</strong> {{selectedCase.id}}</p>
+            <h2>{{selectedCase.title}}</h2>
 
-        <p><strong>Estado:</strong> {{selectedCase.status}}</p>
+            <span class="badge">
 
-        <p><strong>Prioridad:</strong> {{selectedCase.priority}}</p>
+                {{selectedCase.status}}
 
-        <p><strong>Barrio:</strong> {{selectedCase.neighborhood}}</p>
+            </span>
 
-        <p><strong>Responsable:</strong> {{selectedCase.guard}}</p>
+        </div>
 
-        <p><strong>Fecha:</strong> {{selectedCase.date}}</p>
+        <div class="info-grid">
 
-        <hr>
+            <div>
 
-        <h4>Línea de tiempo</h4>
+                <label>ID</label>
 
-        <ul class="timeline">
+                <span>#{{selectedCase.id}}</span>
 
-            <li>09:00 - Caso creado</li>
+            </div>
 
-            <li>09:15 - Guardia asignado</li>
+            <div>
 
-            <li>09:28 - En desplazamiento</li>
+                <label>Prioridad</label>
 
-            <li>09:41 - Seguimiento activo</li>
+                <span>{{selectedCase.priority}}</span>
 
-        </ul>
+            </div>
 
-        <hr>
+            <div>
+
+                <label>Barrio</label>
+
+                <span>{{selectedCase.neighborhood}}</span>
+
+            </div>
+
+            <div>
+
+                <label>Responsable</label>
+
+                <span>{{selectedCase.guard}}</span>
+
+            </div>
+
+            <div>
+
+                <label>Fecha</label>
+
+                <span>{{selectedCase.date}}</span>
+
+            </div>
+
+        </div>
+
+        <div class="divider"></div>
+
+        <h4>Seguimiento del caso</h4>
+
+        <div class="timeline">
+
+            <div class="step">
+
+                <div class="dot done"></div>
+
+                <div class="step-content">
+
+                    <small>09:00</small>
+
+                    <p>Caso creado</p>
+
+                </div>
+
+            </div>
+
+            <div class="step">
+
+                <div class="dot done"></div>
+
+                <div class="step-content">
+
+                    <small>09:15</small>
+
+                    <p>Guardia asignado</p>
+
+                </div>
+
+            </div>
+
+            <div class="step">
+
+                <div class="dot done"></div>
+
+                <div class="step-content">
+
+                    <small>09:28</small>
+
+                    <p>Unidad en desplazamiento</p>
+
+                </div>
+
+            </div>
+
+            <div class="step">
+
+                <div class="dot active"></div>
+
+                <div class="step-content">
+
+                    <small>09:41</small>
+
+                    <p>Seguimiento activo</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="divider"></div>
 
         <h4>Observaciones</h4>
 
-        <p class="notes">
+        <div class="notes">
 
-            El agente reporta que la situación se encuentra
-            bajo control. Se continúa con la verificación del
-            lugar y la recolección de información para el
-            cierre del incidente.
+            El agente informa que la situación se  encuentra
+            bajo control. <br> Se realiza inspección del lugar, 
+            verificación de evidencias <br> y seguimiento continuo
+            hasta el cierre del incidente.
 
-        </p>
+        </div>
 
     </div>
 
