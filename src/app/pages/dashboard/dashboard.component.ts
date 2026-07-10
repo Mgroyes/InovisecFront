@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { HeaderComponent } from '../../components/header/header.component';
 import { SidebarComponent } from '../../components/sidebar/sidebar.component';
 import { MapComponent } from '../../components/map/map.component';
-import { CaseDetailComponent } from '../../components/case-detail/case-detail.component';
+
 
 @Component({
   selector: 'app-dashboard',
@@ -11,7 +11,7 @@ import { CaseDetailComponent } from '../../components/case-detail/case-detail.co
     HeaderComponent,
     SidebarComponent,
     MapComponent,
-    CaseDetailComponent
+
   ],
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
