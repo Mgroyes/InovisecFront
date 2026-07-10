@@ -36,3 +36,48 @@ a {
 button {
   cursor: pointer;
 }
+
+/* ==========================
+   SWEET ALERT - INOVISEC
+========================== */
+
+.inovisec-popup {
+  border-radius: 12px !important;
+  background: #17384A !important;
+  color: #fff !important;
+  box-shadow: 0 15px 40px rgba(0,0,0,.35);
+}
+
+.inovisec-title {
+  color: #ffffff !important;
+  font-size: 22px !important;
+  font-weight: 600 !important;
+}
+
+.inovisec-text {
+  color: #d7e5ec !important;
+  font-size: 15px !important;
+}
+
+.inovisec-button {
+  background: #F5C85C !important;
+  color: #17384A !important;
+  border-radius: 8px !important;
+  padding: 10px 28px !important;
+  font-weight: 600 !important;
+}
+
+.swal2-icon.swal2-error {
+  border-color: #F5C85C !important;
+  color: #F5C85C !important;
+}
+
+.swal2-icon.swal2-warning {
+  border-color: #F5C85C !important;
+  color: #F5C85C !important;
+}
+
+.swal2-icon.swal2-success {
+  border-color: #1EC8C8 !important;
+  color: #1EC8C8 !important;
+}

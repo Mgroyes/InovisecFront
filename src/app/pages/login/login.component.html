@@ -1,11 +1,104 @@
-<div class="h-screen flex items-center justify-center bg-slate-200">
+<div class="min-h-screen bg-[#f4f4f4] flex items-center justify-center">
 
-    <button
-        (click)="login()"
-        class="bg-primary text-white px-8 py-4 rounded-lg">
+  <div class="relative w-[620px] h-[650px]  ">
 
-        Entrar al Dashboard
+    <!-- Imagen inferior -->
+    <img
+      src="assets/imgs/card-login.png"
+      alt="Card"
+      class="absolute bottom-0 left-0 w-full pointer-events-none select-none">
 
-    </button>
+    <!-- Contenido -->
+
+    <div class="relative z-10 flex flex-col items-center pt-10">
+
+      <!-- Logo -->
+
+      <img
+        src="assets/imgs/LogoInovisec.png"
+        alt="Logo"
+        class="w-44 mb-10">
+
+      <!-- Formulario -->
+
+      <div class="w-[470px] flex flex-col gap-6">
+
+        <!-- Usuario -->
+
+        <div>
+
+          <input
+            [(ngModel)]="username"
+            type="text"
+            placeholder="Usuario"
+            class="w-full h-14 rounded-lg border-2 border-cyan-400 bg-cyan-50 px-5 text-lg outline-none focus:border-cyan-500">
+
+        </div>
+
+        <!-- Contraseña -->
+
+        <div class="relative">
+
+          <input
+            [(ngModel)]="password"
+            type="password"
+            placeholder="Contraseña"
+            class="w-full h-14 rounded-lg border-2 border-cyan-400 bg-cyan-50 px-5 pr-14 text-lg outline-none focus:border-cyan-500">
+
+          <button
+            type="button"
+            class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-600">
+
+            👁️
+
+          </button>
+
+        </div>
+
+        <!-- Opciones -->
+
+        <div class="flex justify-between items-center text-sm">
+
+          <label class="flex items-center gap-2 cursor-pointer">
+
+            <input
+              type="checkbox"
+              [(ngModel)]="remember">
+
+            Recordar contraseña
+
+          </label>
+
+          <a
+            href="#"
+            class="text-gray-600 hover:text-cyan-600">
+
+            Olvidé mi clave
+
+          </a>
+
+        </div>
+
+        <!-- Botón -->
+
+        <div class="flex justify-center mt-2">
+
+          <button
+
+            (click)="login()"
+
+            class="w-56 h-12 rounded-lg bg-[#F5C85C] hover:bg-[#e8b744] transition-all duration-300 tracking-[6px] text-black font-medium">
+
+            INGRESAR
+
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
 
 </div>
